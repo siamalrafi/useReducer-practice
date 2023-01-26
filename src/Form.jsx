@@ -20,16 +20,14 @@ const Form = () => {
             }
 
         }
-    }
+    };
+
 
     const [state, dispatch] = useReducer(reducer, initialState)
-
 
     const submitForm = (event) => {
         event.preventDefault();
         console.log(state);
-
-
     }
 
 
@@ -50,7 +48,6 @@ const Form = () => {
                         <input id="firstname" name='firstName' type="text" placeholder="First name"
                             onBlur={(e) => dispatch({ type: 'input', payload: { name: e.target.name, value: e.target.value } })}
 
-
                             className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
                     </div>
                     <div className="col-span-full sm:col-span-3">
@@ -63,6 +60,7 @@ const Form = () => {
                     <div className="col-span-full sm:col-span-3">
                         <label htmlFor="email" className="text-sm">Email</label>
                         <input id="email" name='email' type="email" placeholder="Email"
+
                             onBlur={(e) => dispatch({ type: 'input', payload: { name: e.target.name, value: e.target.value } })}
 
                             className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
